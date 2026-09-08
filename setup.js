@@ -19,14 +19,14 @@ const insert = db.prepare(`
   VALUES (?, ?, ?, ?, ?)
 `);
 
-insert.run('2026 Digital Weekly Planner', 'Planner', 8, 142, 'Active');
-insert.run('Personal Budget Tracker', 'Finance', 6, 231, 'Active');
-insert.run('Small Business Expense Tracker', 'Business', 10, 87, 'Active');
-insert.run('Instagram Content Planner', 'Social Media', 9, 156, 'Active');
-insert.run('Freelancer Invoice Template', 'Business', 7, 113, 'Active');
-insert.run('Monthly Meal Planner', 'Lifestyle', 5, 98, 'Active');
-insert.run('Student Study Planner', 'Education', 6, 205, 'Active');
-insert.run('Wedding Planning Checklist', 'Events', 8, 64, 'Archived');
+insert.run('2026 Digital Weekly Planner', 'Planner', 250, 142, 'Active');
+insert.run('Personal Budget Tracker', 'Finance', 180, 231, 'Active');
+insert.run('Small Business Expense Tracker', 'Business', 320, 87, 'Active');
+insert.run('Instagram Content Planner', 'Social Media', 280, 156, 'Active');
+insert.run('Freelancer Invoice Template', 'Business', 220, 113, 'Active');
+insert.run('Monthly Meal Planner', 'Lifestyle', 150, 98, 'Active');
+insert.run('Student Study Planner', 'Education', 180, 205, 'Active');
+insert.run('Wedding Planning Checklist', 'Events', 250, 64, 'Archived');
 
 console.log(db.prepare('SELECT * FROM products').all());
 
@@ -54,11 +54,11 @@ const byCategory = db.prepare(`
 `).all();
 console.log('Products per category:', byCategory);
 
-// Which products are priced above $7?
-const overSeven = db.prepare(`
+// Which products are priced above ₱200?
+const overTwoHundred = db.prepare(`
   SELECT productName, category, price
   FROM products
   WHERE price > ?
   ORDER BY price DESC
-`).all(7);
-console.log('Products priced above $7:', overSeven);
+`).all(200);
+console.log('Products priced above ₱200:', overTwoHundred);
