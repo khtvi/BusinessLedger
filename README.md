@@ -1,4 +1,4 @@
-# Digital Planner Shop — Database Ledger
+# Sample Database Ledger
 
 A small database for a one-person digital shop selling downloadable planners, trackers, and templates. Customers buy a file, download it instantly, and this database tracks the product catalog.
 
